@@ -5,7 +5,7 @@ from CSVReader import CSVReader, class_factory
 class MyTestCase(unittest.TestCase):
 
     def setUp(self):
-        self.csv_reader = CSVReader('Unit Test Addition.csv')
+        self.csv_reader = CSVReader('/src/Unit Test Addition.csv')
         
     def test_return_data_as_object(self):
         num = self.csv_reader.return_data_as_object('number')
