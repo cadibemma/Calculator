@@ -22,6 +22,12 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(int(row['Result']), self.calculator.subtract(row['Value 1'], row['Value 2']))
             self.assertEqual(int(row['Result']), self.calculator.result)
 
+    def test_multiplication(self):
+        test_data = CSVReader('Unit Test Multiplication.csv').data
+        for row in test_data:
+            self.assertEqual(int(row['Result']), self.calculator.multiply(row['Value 1'], row['Value 2']))
+            self.assertEqual(int(row['Result']), self.calculator.result)
+
     def test_results(self):
         self.assertEqual(self.calculator.result, 0)
 
