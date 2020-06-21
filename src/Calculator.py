@@ -25,11 +25,11 @@ def division(a, b):
     return b / a
 
 
-# def square(a):
-#     a = int(a)
-#     return math.pow(a, 2)
-#
-#
+def square(a):
+    a = int(a)
+    return math.pow(a, 2)
+
+
 # def square_root(a):
 #     a = float(a)
 #     return math.sqrt(a)
@@ -56,3 +56,7 @@ class Calculator:
     def divide(self, a, b):
         self.result = division(a, b)
         return round(float(self.result), 9)
+
+    def sq(self, a):
+        self.result = square(a)
+        return self.result
