@@ -30,9 +30,9 @@ def square(a):
     return math.pow(a, 2)
 
 
-# def square_root(a):
-#     a = float(a)
-#     return math.sqrt(a)
+def square_root(a):
+    a = float(a)
+    return math.sqrt(a)
 
 
 class Calculator:
@@ -60,3 +60,7 @@ class Calculator:
     def sq(self, a):
         self.result = square(a)
         return self.result
+
+    def sq_root(self, a):
+        self.result = square_root(a)
+        return round(float(self.result), 8)
