@@ -3,7 +3,7 @@ from pprint import pprint
 
 
 def class_factory(class_name, dictionary):
-    return type(class_name, dictionary)
+    return type(class_name, (object,), dictionary)
 
 
 class CSVReader:

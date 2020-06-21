@@ -1,5 +1,6 @@
 import unittest
 from Calculator import Calculator
+from CSVReader import CSVReader
 
 
 class MyTestCase(unittest.TestCase):
@@ -7,14 +8,16 @@ class MyTestCase(unittest.TestCase):
         self.calculator = Calculator()
 
     def test_instantiate_calculator(self):
-        self.assertIsInstance(Calculator, self.calculator)
+        self.assertIsInstance(self.calculator, Calculator)
 
     def test_addition(self):
-        self.assertEqual(3, self.calculator.add(1, 2))
-        self.assertEqual(3, self.calculator.result)
+        test_data = CSVReader('Unit Test Addition.csv').data
+        for row in test_data:
+            self.assertEqual(int(row['Result']), self.calculator.add(int(row['Value 1']), int(row['Value 2'])))
+            self.assertEqual(int(row['Result']), self.calculator.result)
 
-    def test_something(self):
-         self.assertEqual(True, False)
+    def test_results(self):
+        self.assertEqual(self.calculator.result, 0)
 
 
 if __name__ == '__main__':
