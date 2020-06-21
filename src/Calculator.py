@@ -19,12 +19,12 @@ def multiplication(a, b):
     return a * b
 
 
-# def division(a, b):
-#     a = float(a)
-#     b = float(b)
-#     return b / a
-#
-#
+def division(a, b):
+    a = float(a)
+    b = float(b)
+    return b / a
+
+
 # def square(a):
 #     a = int(a)
 #     return math.pow(a, 2)
@@ -52,3 +52,7 @@ class Calculator:
     def multiply(self, a, b):
         self.result = multiplication(a, b)
         return self.result
+
+    def divide(self, a, b):
+        self.result = division(a, b)
+        return round(float(self.result), 9)
