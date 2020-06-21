@@ -13,7 +13,13 @@ class MyTestCase(unittest.TestCase):
     def test_addition(self):
         test_data = CSVReader('Unit Test Addition.csv').data
         for row in test_data:
-            self.assertEqual(int(row['Result']), self.calculator.add(int(row['Value 1']), int(row['Value 2'])))
+            self.assertEqual(int(row['Result']), self.calculator.add(row['Value 1'], row['Value 2']))
+            self.assertEqual(int(row['Result']), self.calculator.result)
+
+    def test_subtraction(self):
+        test_data = CSVReader('Unit Test Subtraction.csv').data
+        for row in test_data:
+            self.assertEqual(int(row['Result']), self.calculator.subtract(row['Value 1'], row['Value 2']))
             self.assertEqual(int(row['Result']), self.calculator.result)
 
     def test_results(self):
